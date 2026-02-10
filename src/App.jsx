@@ -1,33 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+
+
+
+
+
+
 import './App.css'
 
+import LoginPage from "./LoginSchool/LoginPage.jsx";
+import "./LoginSchool/LoginPage.css";
+
+// import ChangePasswordPage from "./LoginSchool/ChangePasswordPage.jsx";
+// import "./LoginSchool/ChangePasswordPage.css";
+import RegisterPage from "./LoginSchool/RegisterPage.jsx";
+// import Home from "./association/home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    
+    
+    
+
+
+
+
+
+        <BrowserRouter>
+        <div className="homeaboutmoto-menu-homesch">
+        </div>
+        {/* <Navbar/> */}
+
+        <Routes>
+          {/* <Route element={<Navbar/>}> */}
+          <Route >
+
+          <Route path="/login" element={<LoginPage />} />
+          {/* <Route path="/change-password" element={<ChangePasswordPage />} /> */}
+          <Route path="/register" element={<RegisterPage />} />
+
+  
+ {/* <Route path="/" element={<Home/>} /> */}
+      
+          {/* 
+          <Route path="/eventass" element={<Event />} />
+          <Route path="/eventmoreass" element={<Eventmoreass />} />
+          <Route path="/servicesass" element={<Servicesass />} />
+          <Route path="/contactass" element={<Contactass />} /> */}
+          </Route>
+
+//true
+ {/* <Route element={<AdminLayout />}> */}
+  {/* <Route element={<AdminNavbar />}>
+
+   
+          <Route path="/eventview" element={<Eventview/>} />
+          <Route path="/servicesview" element={<Servicesview />}/> 
+
+                     <Route path="/contactview" element={<Contactview />} />
+          <Route path='/event' element={<Events />} />
+          <Route path='/create' element={<CreateEvent />} />
+          <Route path='/update/:id' element={<UpdateEvent />} />
+
+          <Route path='/services' element={<Services />} />
+          <Route path='/createServices' element={<CreateServices />} />
+          <Route path='/updateservices/:id' element={<UpdateServices />} />
+  </Route> */}
+
+        </Routes>
+
+      </BrowserRouter>
+    
     </>
   )
 }
